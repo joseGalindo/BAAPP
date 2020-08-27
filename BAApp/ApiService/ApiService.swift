@@ -81,7 +81,5 @@ final class ApiService {
                     completionHandler(.failure(.networkError(error: error)))
                 }
         }
-        
     }
-    
 }

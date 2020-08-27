@@ -22,8 +22,10 @@ class ViewController: BaseViewController {
             case let .success(response):
                 self.tvshows.append(contentsOf: response)
                 self.mTable.reloadData()
-            case .failure(let error):
-                print(error)
+            case .failure:
+                self.showError(message: "Ocurrió un error al consultar el servicio. ¿Quieres intentar nuevamente?", action: UIAlertAction(title: "Otra vez", style: .default, handler: { (action) in
+                    self.getShows()
+                }))
             }
         }
     }
